@@ -42,6 +42,7 @@ export default function Home() {
       setConArguments(conResult.arguments);
       conResult.arguments.forEach((arg) => {
         addChatMessage({text: arg, sender: 'Con AI'});
+        
       });
     }
   };
@@ -67,7 +68,7 @@ export default function Home() {
   return (
     <div className="container mx-auto p-4">
       <Toaster />
-      <h1 className="text-2xl font-bold mb-4">Debate Duel</h1>
+      <h1 className="text-2xl font-bold mb-4">AI Debate</h1>
 
       {/* Topic Submission Form */}
       <div className="mb-4">

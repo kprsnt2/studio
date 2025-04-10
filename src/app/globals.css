@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -86,6 +85,18 @@ body {
     @apply rounded-lg border shadow-md p-4 mb-4; /* Add a rounded border and shadow to arguments */
   }
 
+}
+
+@layer components {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
   @keyframes slide-in-bottom {
     from {
       opacity: 0;
@@ -97,16 +108,7 @@ body {
     }
   }
 
-  .new-argument {
-    @apply animate-slide-in-bottom; /* Apply animation for new arguments */
-  }
-}
-
-@layer components {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
+  .animate-slide-in-bottom {
+    animation: slide-in-bottom 0.5s ease-out;
   }
 }

@@ -1,1 +1,2 @@
-// Flows will be imported for their side effects in this file.
+import '@/ai/flows/analyze-argument-weaknesses.ts';
+import '@/ai/flows/generate-debate-arguments.ts';

@@ -1,4 +1,3 @@
-
 'use client';
 
 import {useState} from 'react';
@@ -11,6 +10,7 @@ import {analyzeArgumentWeaknesses} from '@/ai/flows/analyze-argument-weaknesses'
 import {ScrollArea} from '@/components/ui/scroll-area';
 import {toast} from "@/hooks/use-toast"
 import {Toaster} from "@/components/ui/toaster"
+import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
 
 export default function Home() {
   const [topic, setTopic] = useState('');
@@ -133,14 +133,20 @@ export default function Home() {
 
       {/* Chat Interface */}
       <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-2">Chat</h2>
-        <div className="border rounded-lg p-4 h-[400px] overflow-y-auto">
-          {chatMessages.map((message, index) => (
-            <div key={index} className="mb-2">
-              <span className="font-semibold">{message.sender}:</span> {message.text}
-            </div>
-          ))}
-        </div>
+        <Accordion type="single" collapsible>
+          <AccordionItem value="chat">
+            <AccordionTrigger>Chat</AccordionTrigger>
+            <AccordionContent>
+              <div className="border rounded-lg p-4 h-[400px] overflow-y-auto">
+                {chatMessages.map((message, index) => (
+                  <div key={index} className="mb-2">
+                    <span className="font-semibold">{message.sender}:</span> {message.text}
+                  </div>
+                ))}
+              </div>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </div>
   );

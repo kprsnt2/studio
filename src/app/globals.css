@@ -86,10 +86,6 @@ body {
     @apply rounded-lg border shadow-md p-4 mb-4; /* Add a rounded border and shadow to arguments */
   }
 
-  .new-argument {
-    @apply animate-slide-in-bottom; /* Apply animation for new arguments */
-  }
-
   @keyframes slide-in-bottom {
     from {
       opacity: 0;
@@ -99,6 +95,10 @@ body {
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .new-argument {
+    @apply animate-slide-in-bottom; /* Apply animation for new arguments */
   }
 }
 
@@ -110,3 +110,4 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
